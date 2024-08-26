@@ -67,5 +67,7 @@ int main() {
     std::cout << "Binary Search - Found: " << std::boolalpha << foundBinary 
               << ", Time taken: " << binaryDuration.count() << " seconds" << std::endl;
 
+
+    std::cout << linearDuration.count() << " = " << linearDuration.count() / binaryDuration.count() << " * " << binaryDuration.count() << endl;
     return 0;
 }
