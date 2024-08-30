@@ -31,10 +31,10 @@ bool binarySearch(const std::vector<int>& data, int target) {
 }
 
 int main() {
-    const int N = 1000000; // 10^6 phần tử
+    const int N = 1000000000; // 10^9 phần tử
     std::vector<int> data(N);
 
-    // Tạo ngẫu nhiên 10^8 phần tử
+    // Tạo ngẫu nhiên 10^9 phần tử
     for (int i = 0; i < N; ++i) {
         data[i] = rand();
     }
