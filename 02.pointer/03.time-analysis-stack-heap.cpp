@@ -2,14 +2,14 @@
 #include <chrono>
 using namespace std;
 using namespace chrono;
-
+int N = 1000000;
 // Hàm đo tốc độ trích xuất từ Stack
 void testStackAccess() {
     // Cấp phát mảng trên Stack
-    int stackArray[1000000];  // Mảng với 1 triệu phần tử
+    int stackArray[N];  // Mảng với 1 triệu phần tử
 
     // Gán giá trị để chắc chắn bộ nhớ được sử dụng
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < N; i++) {
         stackArray[i] = i;
     }
 
@@ -18,7 +18,7 @@ void testStackAccess() {
 
     // Trích xuất giá trị từ mảng trên Stack
     volatile int sum = 0;  // Dùng volatile để tránh tối ưu hóa compiler
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < N; i++) {
         sum += stackArray[i];
     }
 
@@ -31,10 +31,11 @@ void testStackAccess() {
 // Hàm đo tốc độ trích xuất từ Heap
 void testHeapAccess() {
     // Cấp phát mảng trên Heap
-    int* heapArray = new int[1000000];  // Mảng với 1 triệu phần tử
+    
+    int* heapArray = new int[N];  // Mảng với 1 triệu phần tử
 
     // Gán giá trị để chắc chắn bộ nhớ được sử dụng
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < N; i++) {
         heapArray[i] = i;
     }
 
@@ -43,7 +44,7 @@ void testHeapAccess() {
 
     // Trích xuất giá trị từ mảng trên Heap
     volatile int sum = 0;  // Dùng volatile để tránh tối ưu hóa compiler
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < N; i++) {
         sum += heapArray[i];
     }
 
